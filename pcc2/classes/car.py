@@ -1,5 +1,6 @@
 """A class that can be used to represent a car."""
 
+
 class Car:
     """A simple attempt to represent a car."""
 
@@ -33,6 +34,7 @@ class Car:
         """Add the given amount to the odometer reading."""
         self.odometer_reading += miles
 
+
 class Battery:
     """A simple attempt to model a battery for an electric car."""
 
@@ -51,6 +53,7 @@ class Battery:
         elif self.battery_size == 100:
             range = 315
         print(f"This car can go about {range} miles on a full charge.")
+
 
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles."""
