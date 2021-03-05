@@ -1,6 +1,18 @@
 # coding:utf-8
 
-import os,random,time,asyncio
+import os,random,time,asyncio,gevent
+
+def gevent_a():
+    for i in range(5):
+        print(i, 'a gevent', os.getpid())
+        gevent.sleep(random.random() * 2)
+    return 'gevent a result'
+
+def gevent_b():
+    for i in range(5):
+        print(i, 'b gevent', os.getpid())
+        gevent.sleep(random.random() * 2)
+    return 'gevent b result'
 
 async def a():
     for i in range(10):
@@ -25,6 +37,16 @@ async def main():
 
 if __name__ == '__main__':
     start = time.time()
-    asyncio.run(main())
+    # asyncio.run(main())
+
+    g_a = gevent.spawn(gevent_a)
+    g_b = gevent.spawn(gevent_b)
+    gevent_list = [g_a, g_b]
+    result = gevent.joinall(gevent_list)
+    # print(result)
+    # print(dir(result[0]))
+    print(result[0].value)
+    print(result[1].value)
+
     print(time.time() - start)
     print('parent is %s' % os.getpid())
