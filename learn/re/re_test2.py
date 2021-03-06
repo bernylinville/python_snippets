@@ -12,7 +12,7 @@ def check_url(url):
 
 
 def get_url(url):
-    result = re.findall('https://(\w*\.*\w+\.\w+)', url)
+    result = re.findall('[http://|https://](\w*\.*\w+\.\w+)', url)
     if result:
         return result[0]
     else:
@@ -20,7 +20,17 @@ def get_url(url):
 
 
 def get_email(email):
-    result = re.findall('[0-9a-zA-Z_]+@[0-9a-zA-Z]+\.[a-zA-Z]+', email)
+    result = re.findall('.+@.+\.[a-zA-Z]+', email)
+    return result
+
+
+def get_html(html):
+    result = re.findall('style="(.*?)"', html)
+    return result
+
+
+def get_all_html(html):
+    result = re.findall('="(.+?)"', html)
     return result
 
 
@@ -37,4 +47,8 @@ if __name__ == "__main__":
 
     email = 'bernylinville@devopsthink.org'
     result = get_email(email)
+    print(result)
+
+    html = '<div class="s-top-nav" style="display:none;">''</div><div class="s-center-box"></div>'
+    result = get_all_html(html)
     print(result)
