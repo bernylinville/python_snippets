@@ -8,12 +8,14 @@ from concurrent.futures import ThreadPoolExecutor
 
 lock = threading.Lock()
 
+
 def work(i):
     # lock.acquire()
     print(i, os.getpid())
     time.sleep(1)
     # lock.release()
     return 'result %s' % i
+
 
 if __name__ == '__main__':
     print(os.getpid())

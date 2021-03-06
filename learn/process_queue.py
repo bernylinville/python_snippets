@@ -4,6 +4,7 @@ import json
 import time
 import multiprocessing
 
+
 class Work(object):
     def __init__(self, q):
         self.q = q
@@ -26,6 +27,7 @@ class Work(object):
         for i in range(10):
             self.q.put(i)
             time.sleep(1)
+
 
 if __name__ == "__main__":
     q = multiprocessing.Queue()

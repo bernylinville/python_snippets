@@ -1,6 +1,9 @@
 # coding:utf-8
 
-import multiprocessing,time,random
+import multiprocessing
+import time
+import random
+
 
 def sender(q):
     while True:
@@ -9,11 +12,13 @@ def sender(q):
         q.put(x)
         time.sleep(1)
 
+
 def recvder(q):
     while True:
         x = q.get()
         print("recv done: ", x * 3.14)
         time.sleep(1)
+
 
 if __name__ == "__main__":
     q = multiprocessing.Queue()

@@ -2,6 +2,7 @@
 
 import re
 
+
 def had_number(data):
     result = re.findall('\d', data)
     if result:
@@ -9,10 +10,12 @@ def had_number(data):
     else:
         return False
 
+
 def remove_number(data):
     result = re.findall('\D', data)
     print(result)
     return ''.join(result)
+
 
 def start_with(sub, data):
     _sub = '\A%s' % sub
@@ -20,6 +23,7 @@ def start_with(sub, data):
     for i in result:
         return True
     return False
+
 
 def end_with(sub, data):
     _sub = '%s\Z' % sub
@@ -29,9 +33,11 @@ def end_with(sub, data):
     else:
         return False
 
+
 def real_lenth(data):
     result = re.findall('\S', data)
     return len(result)
+
 
 if __name__ == '__main__':
     data = 'adg d4g rgdf45   adsgf dafgr'

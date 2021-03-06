@@ -13,6 +13,7 @@ def sequential_search(list, item):
 
     return found
 
+
 if __name__ == '__main__':
     list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     item = 31

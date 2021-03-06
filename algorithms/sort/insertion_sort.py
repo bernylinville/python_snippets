@@ -2,6 +2,7 @@
 
 import random
 
+
 def insertion_sort(nums):
     indexs = len(nums)
     for i in range(1, indexs):
@@ -10,6 +11,7 @@ def insertion_sort(nums):
             i -= 1
 
     return nums
+
 
 nums = random.sample(list(range(20)), 5)
 print(nums)

@@ -8,6 +8,7 @@ lists = ['python', 'django', 'tornado', 'flask', 'bs5', 'requests', 'uvloop']
 
 new_lists = []
 
+
 def work():
     if len(lists) == 0:
         return
@@ -17,6 +18,7 @@ def work():
     new_data = '%s_new' % data
     new_lists.append(new_data)
     time.sleep(1)
+
 
 if __name__ == '__main__':
     start = time.time()

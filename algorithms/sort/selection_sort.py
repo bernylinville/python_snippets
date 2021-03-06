@@ -2,6 +2,7 @@
 
 import random
 
+
 def selection_sort(nums):
     indexs = len(nums)
     for i in range(indexs):
@@ -10,6 +11,7 @@ def selection_sort(nums):
                 nums[i], nums[j] = nums[j], nums[i]
 
     return nums
+
 
 nums = random.sample(list(range(20)), 5)
 print(nums)

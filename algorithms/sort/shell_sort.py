@@ -2,6 +2,7 @@
 
 import random
 
+
 def shell_sort(nums):
     indexs = len(nums)
     gap = indexs // 2
@@ -13,6 +14,7 @@ def shell_sort(nums):
 
         gap //= 2
     return nums
+
 
 nums = random.sample(list(range(20)), 5)
 print(nums)

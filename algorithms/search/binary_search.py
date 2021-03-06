@@ -20,6 +20,7 @@ def binary_search(list, item):
 
     return found
 
+
 if __name__ == '__main__':
     list = [17, 20, 26, 31, 44, 54, 55, 77, 93]
     item = 31
