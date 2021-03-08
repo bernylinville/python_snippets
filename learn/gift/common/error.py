@@ -28,3 +28,8 @@ class RoleError(Exception):
 class LevelError(Exception):
     def __init__(self, message):
         self.message = message
+
+
+class NegativeNumError(Exception):
+    def __init__(self, message):
+        self.message = message
