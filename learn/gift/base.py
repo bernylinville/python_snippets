@@ -83,7 +83,7 @@ class Base(object):
         users = self.__read_users()
 
         if user['username'] in users:
-            raise UserExistsError('username %s had exists' % user['usernmae'])
+            raise UserExistsError('username %s had exists' % user['username'])
 
         users.update(
             {user['username']: user}
@@ -262,12 +262,12 @@ class Base(object):
             f.write(json_data)
 
 
-if __name__ == '__main__':
-    gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
-    user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
+# if __name__ == '__main__':
+#     gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
+#     user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
     # print(gift_path)
     # print(user_path)
-    base = Base(user_path, gift_path)
+    # base = Base(user_path, gift_path)
     # base.write_user(username='kchou', role='admin')
 
     # result = base.change_role('kchou', 'norml')
