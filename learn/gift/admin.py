@@ -66,14 +66,14 @@ class Admin(Base):
             raise Exception(message)
 
 
-if __name__ == '__main__':
-    gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
-    user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
-    admin = Admin('kchou', user_path, gift_path)
+# if __name__ == '__main__':
+    # gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
+    # user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
+    # admin = Admin('kchou', user_path, gift_path)
     # admin.get_user()
     # admin.add_user('admin', 'admin')
     # admin.update_user_active('test')
     # admin.update_user_role('kchou', 'admin')
     # admin.add_gift('level1', 'level1', 'ball', 10)
     # admin.delete_gift('level1', 'level1', 'ball')
-    admin.update_gift('level1', 'level1', 'ball', 100)
+    # admin.update_gift('level1', 'level1', 'ball', 100)

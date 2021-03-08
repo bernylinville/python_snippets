@@ -56,6 +56,7 @@ class User(Base):
         return gift_lists
 
     def choice_gift(self):
+        self.get_user()
         # level1 get
         first_level = None
         second_level = None
@@ -113,11 +114,11 @@ class User(Base):
         self._Base__save(users, self.user_json)
 
 
-if __name__ == '__main__':
-    gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
-    user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
-    user = User('test', user_path, gift_path)
+# if __name__ == '__main__':
+#     gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
+#     user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
+#     user = User('test', user_path, gift_path)
     # print(user.name, user.create_time, user.gifts, user.role)
     # result = user.get_gifts()
     # print(result)
-    user.choice_gift()
+    # user.choice_gift()
