@@ -269,14 +269,14 @@ class Base(object):
 
 
 # if __name__ == '__main__':
-#     gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
-#     user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
+    # gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
+    # user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
     # print(gift_path)
     # print(user_path)
     # base = Base(user_path, gift_path)
     # base.write_user(username='kchou', role='admin')
 
-    # result = base.change_role('kchou', 'norml')
+    # result = base.change_role('kchou', 'admin')
     # print(result)
     # result = base.delete_user('kchou')
     # print(result)
