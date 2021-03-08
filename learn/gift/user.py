@@ -98,12 +98,10 @@ class User(Base):
         if gift_info.get('count') == 0:
             print('哦可惜 您没有中奖')
             return
-        gift_info['count'] -= 1
-        level_two[gift_name] = gift_info
-        level_one[second_level] = level_two
-        gifts[first_level] = level_one
+        gift_count = gift_info['count'] - 1
+        self._Base__gift_update(
+            first_level, second_level, gift_name, gift_count)
 
-        self._Base__save(gifts, self.gift_json)
         self.user['gifts'].append(gift_name)
         self.update()
         print('恭喜您获得 %s 奖品' % gift_name)

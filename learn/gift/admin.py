@@ -76,4 +76,4 @@ if __name__ == '__main__':
     # admin.update_user_role('kchou', 'admin')
     # admin.add_gift('level1', 'level1', 'ball', 10)
     # admin.delete_gift('level1', 'level1', 'ball')
-    # admin.update_gift('level1', 'level1', 'ball', 100)
+    admin.update_gift('level1', 'level1', 'ball', 100)
