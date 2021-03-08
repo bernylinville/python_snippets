@@ -8,40 +8,6 @@ from common.utils import check_file, timestamp_to_str
 from common.error import UserExistsError, RoleError, LevelError, NegativeNumError, CountError
 from common.consts import ROLES, FIRSTLEVELS, SECONDLEVELS
 
-"""
-    1. gifts 修改（数量递减）
-    2. gifts 奖品删除
-
-    {
-        'level1': {
-            'level1': {
-                gift_name: {
-                    name: xx
-                    count: xx
-                }
-            },
-            'level2': {},
-            'level3': {},
-        },
-        'level2': {
-            'level1': {},
-            'level2': {},
-            'level3': {}
-        },
-        'level3': {
-            'level1': {},
-            'level2': {},
-            'level3': {}
-        },
-        level4: {
-            'level1': {},
-            'level2': {},
-            'level3': {}
-        }
-    }
-
-"""
-
 
 class Base(object):
     def __init__(self, user_json, gift_json):

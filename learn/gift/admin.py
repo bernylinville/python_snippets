@@ -1,13 +1,5 @@
 # coding:utf-8
 
-"""
-    1. admin 验证（只有admin的用户才能用这个类）
-    2. 任何函数都应该动态的更新 get user
-    3. 奖品的添加
-    4. 奖品的删除
-    5. 奖品数量的更新（同步 base 调整）
-"""
-
 import os
 
 from base import Base
