@@ -1,9 +1,9 @@
 # coding:utf-8
 
 """
-    1: 确定用户表中每个用户的信息字段
-    2: 读取 user.json 文件
-    3: 写入 user.json 文件（检测该用户是否存在），存在则不可写入
+    1: role 的修改
+    2: active 的修改
+    3: delete_user
 
     username 姓名
     role: normal or admin
@@ -12,6 +12,8 @@
     update_time timestamp
     gifts []
 
+    username: {username, role, active}
+
 """
 
 import os
@@ -19,7 +21,8 @@ import json
 import time
 
 from common.utils import check_file, timestamp_to_str
-from common.error import UserExistsError
+from common.error import UserExistsError, RoleError
+from common.consts import ROLES
 
 
 class Base(object):
@@ -71,6 +74,53 @@ class Base(object):
         with open(self.user_json, 'w') as f:
             f.write(json_users)
 
+    def __change_role(self, username, role):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        if role not in ROLES:
+            raise RoleError('not use role %s' % role)
+
+        user['role'] = role
+        user['update_time'] = time.time()
+        users[username] = user
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+        return True
+
+    def __change_active(self, username):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        user['active'] = not user['active']
+        user['update_time'] = time.time()
+        users[username] = user
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+        return True
+
+    def __delete_user(self, username):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        delete_user = users.pop(username)
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+
+        return delete_user
+
 
 if __name__ == '__main__':
     gift_path = os.path.join(os.getcwd(), 'storage', 'gift.json')
@@ -79,3 +129,8 @@ if __name__ == '__main__':
     # print(user_path)
     base = Base(user_path, gift_path)
     # base.write_user(username='kchou', role='admin')
+
+    # result = base.change_role('kchou', 'norml')
+    # print(result)
+    # result = base.delete_user('kchou')
+    # print(result)
