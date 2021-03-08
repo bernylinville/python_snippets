@@ -4,7 +4,7 @@
     1. 防止并发操作 user.json gift.json
     2. 登陆体系优化 regist(username, password, role=normal, active=False)
                    base 获取所有 active 为 false 的用户
-                   check_user
+                   get_user
     3. 每日抽奖次数限制
 """
 
