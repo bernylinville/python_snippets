@@ -4,7 +4,7 @@ import argparse
 def _argparse():
     parser = argparse.ArgumentParser(description="This is description")
     parser.add_argument('--host', action='store', dest='server',
-                        default="location", help='connect to host')
+                        default="localhost", help='connect to host')
     parser.add_argument('-t', action='store_true', default=False,
                         dest='boolean_switch', help='Set a switch to true')
     return parser.parse_args()
