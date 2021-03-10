@@ -1,0 +1,8 @@
+[mysqld]
+basedir = /usr
+tmpdir = /tmp
+skip-external-locking
+
+[mysql]
+port = 3306
+
