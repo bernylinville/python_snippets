@@ -6,3 +6,6 @@ CRITICAL:root:critical message
 2021-03-11 11:12:26,309 : WARNING : warning message
 2021-03-11 11:12:26,309 : ERROR : error message
 2021-03-11 11:12:26,309 : CRITICAL : critical message
+2021-03-11 11:17:34,815 WARNI [root:8] warning message
+2021-03-11 11:17:34,815 ERROR [root:9] error message
+2021-03-11 11:17:34,815 CRITI [root:10] critical message
