@@ -2,3 +2,7 @@ INFO:root:info message
 WARNING:root:warning message
 ERROR:root:error message
 CRITICAL:root:critical message
+2021-03-11 11:12:26,309 : INFO : info message
+2021-03-11 11:12:26,309 : WARNING : warning message
+2021-03-11 11:12:26,309 : ERROR : error message
+2021-03-11 11:12:26,309 : CRITICAL : critical message
